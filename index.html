@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>API Token Authentication</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,49 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>API Token Authentication</h1>
+      <h2> This is a toy application. Do not enter real passwords, or passwords you have used anywhere else!</h2>
+
+      <!-- Initially empty, will be updated with messages to our user -->
+      <h2 id="message"></h2>
+
+      <h2>Sign-up</h2>
+      <form id='sign-up'>
+        <input type="email" name="credentials[email]" placeholder='Enter email...' >
+        <input type="password" name="credentials[password]" placeholder='Enter password'>
+        <input type="password" name="credentials[password_confirmation]" placeholder='Enter password again'>
+        <button>Sign Up</button>
+      </form>
+
+      <h2>Sign-in</h2>
+      <form id='sign-in'>
+        <input type="email" name="credentials[email]" placeholder='Enter email...' >
+        <input type="password" name="credentials[password]" placeholder='Enter password'>
+        <button>Sign In</button>
+      </form>
+
+      <h2>Change Password</h2>
+      <form id='change-password'>
+        <input type="password" name="passwords[old]" placeholder='Enter old password'>
+        <input type="password" name="passwords[new]" placeholder='Enter new password'>
+        <button>Change Password</button>
+      </form>
+
+      <h2>Sign out</h2>
+      <form id='sign-out'>
+        <button>Sign out</button>
+      </form>
+
+      <h2>Create Example</h2>
+      <!-- Make a form, and give it an id, `create-example`, which we will
+           reference in `app.js` when we write our event handler. -->
+      <form id='create-example'>
+        <!-- We want to collect some text for our example
+             We add a `name` attribute, so we can specify what format getFormFields should represent data as. -->
+        <input type='text' placeholder='Enter text' name="example[text]">
+        <!-- The button submits the form -->
+        <button>Create Example</button>
+      </form>
+
     </body>
 </html>
